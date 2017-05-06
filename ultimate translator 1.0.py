@@ -4,7 +4,7 @@
 ##Created by Harsh Karamchandani,Abhishek Mishra (c){2017}
 
 from Tkinter import *   ##Imports Tkinter modules we need. We need tkMessageBox, tkinter for our application.
-from gtts import gTTS  ##To import google text to speech
+from gtts import gTTS  ##To import google text to speech engine
 import os
 from translate import Translator
 
@@ -64,7 +64,6 @@ def accent():  ##Function to speak out the translated text in the accent chosen 
     tts.save("good.mp3")
     os.system("mpg321 good.mp3")
     os.startfile('good.mp3')
-
     
 Label(root, text="Enter Text in English").grid(row=0)  ##This is to tell the user to enter the input in English language only. This can be changed using source code.
 
@@ -73,6 +72,5 @@ e1.grid(row=0, column=1, pady=15, padx=15 , columnspan = 20)
 Button(root, text='Speak in Language', command=speak).grid(row=3, column=0, pady=15, padx=15) ##Creating a button to allow user to command "Speak in language" task
 Button(root, text='Translate', command=translate).grid(row=3, column=1, pady=15, padx=15)  ##Creating a button to allow user to command "Translate" task
 Button(root, text='Speak in Accent', command=accent).grid(row=3, column=2, pady=15, padx=15)  ##Creating a button to allow user to command "Speak in Accent" task
-Label(root, text="Translated Text:"). grid(row=5, column=0, pady=15, padx=15)
 
 root.mainloop()  ##Keeps the program running till user closes it
